@@ -34,7 +34,9 @@ def multipleProcess(distributeList, partitionDataFunc, taskFunction, n_jobs,
 
 # Example
 def task(ShareQueue, Locker, data, parameterList):
-
+    
+    print('Child process %s.' % os.getpid())
+    
     result = sum(data)
 
     Locker.acquire()
